@@ -4,7 +4,7 @@
 
 <script src='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js'></script>
 <link href='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css' rel='stylesheet' />
-<div id='map' style='width: 1300px; height: 500px; margin: 0 auto; margin-top: 100px;'></div>
+<div id='map' style='width: 1300px; height: 500px; margin: 0 auto; margin-top: 100px; margin-bottom: 100px'></div>
 <script>
 mapboxgl.accessToken = 'pk.eyJ1IjoidGhlYmxhY2tibGF6ZXIiLCJhIjoiY2sydXprZnowMTVhbTNncHZiazd4Ym4zdiJ9.roJUPFMaDgxcsnzXc40Wqw';
 var map = new mapboxgl.Map({
@@ -19,113 +19,6 @@ var marker = new mapboxgl.Marker()
   .addTo(map);
 
 </script>
-
-
-<div id="container" style="width:50%; float:left; height:300px; margin-top:50px"></div>
-<script src="https://code.highcharts.com/highcharts.src.js"></script>
-<script>
-  Highcharts.chart('container', {
-      chart: {
-          type: 'line'
-      },
-      title: {
-          text: 'Historic World Population by Region'
-      },
-      xAxis: {
-          categories: ['Africa', 'America', 'Asia', 'Europe', 'Oceania']
-      },
-      series: [{
-          name: 'Year 1800',
-          data: [107, 31, 635, 203, 2]
-      }, {
-          name: 'Year 1900',
-          data: [133, 156, 947, 408, 6]
-      }, {
-          name: 'Year 2012',
-          data: [1052, 954, 4250, 740, 38]
-      }]
-  });
-</script>
-
-<div id="container1" style="width:50%; float:right; height:300px;margin-top:50px"></div>
-<script src="https://code.highcharts.com/highcharts.src.js"></script>
-<script>
-  Highcharts.chart('container1', {
-      chart: {
-          type: 'spline'
-      },
-      title: {
-          text: 'Historic World Population by Region'
-      },
-      xAxis: {
-          categories: ['Africa', 'America', 'Asia', 'Europe', 'Oceania']
-      },
-      series: [{
-          name: 'Year 1800',
-          data: [107, 31, 635, 203, 2]
-      }, {
-          name: 'Year 1900',
-          data: [133, 156, 947, 408, 6]
-      }, {
-          name: 'Year 2012',
-          data: [1052, 954, 4250, 740, 38]
-      }]
-  });
-</script>
-
-<div id="container2" style="width:50%; float:left; height:300px; margin-top:50px"></div>
-<script src="https://code.highcharts.com/highcharts.src.js"></script>
-<script>
-  Highcharts.chart('container2', {
-      chart: {
-          type: 'line'
-      },
-      title: {
-          text: 'Historic World Population by Region'
-      },
-      xAxis: {
-          categories: ['Africa', 'America', 'Asia', 'Europe', 'Oceania']
-      },
-      series: [{
-          name: 'Year 1800',
-          data: [107, 31, 635, 203, 2]
-      }, {
-          name: 'Year 1900',
-          data: [133, 156, 947, 408, 6]
-      }, {
-          name: 'Year 2012',
-          data: [1052, 954, 4250, 740, 38]
-      }]
-  });
-</script>
-
-<div id="container3" style="width:50%; float:right; height:300px;margin-top:50px"></div>
-<script src="https://code.highcharts.com/highcharts.src.js"></script>
-<script>
-  Highcharts.chart('container3', {
-      chart: {
-          type: 'spline'
-      },
-      title: {
-          text: 'Historic World Population by Region'
-      },
-      xAxis: {
-          categories: ['Africa', 'America', 'Asia', 'Europe', 'Oceania']
-      },
-      series: [{
-          name: 'Year 1800',
-          data: [107, 31, 635, 203, 2]
-      }, {
-          name: 'Year 1900',
-          data: [133, 156, 947, 408, 6]
-      }, {
-          name: 'Year 2012',
-          data: [1052, 954, 4250, 740, 38]
-      }]
-  });
-</script>
-
-
 
 
     {% endblock %}  

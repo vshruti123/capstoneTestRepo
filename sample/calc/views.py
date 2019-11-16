@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.contrib import messages
+
 # Create your views here.
 
 def home(request):
@@ -17,3 +19,4 @@ def demand(request):
 def about(request):
     context = {"about_page": "active"} # new info here
     return render(request, 'about.html', context)
+
