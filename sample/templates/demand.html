@@ -3,7 +3,51 @@
 <!doctype html>
 <html>
 <head>
-	<title>Production</title>
+    <title>Demand</title>
+    <style>
+        * {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 100%;
+  padding: 0 10px;
+  
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.row {margin-bottom: 40px; margin-left: 10px;margin-right: 10px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgb(105, 146, 228); /* this adds the "card" effect */
+  padding: 16px;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+/* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+    </style>
 </head>
 
 <body>
@@ -28,106 +72,21 @@ Crop:
 <br>
 <br>
 
-<div id="container" style="width:50%; float:left; height:300px; margin-top:50px;"></div>
-<script src="https://code.highcharts.com/highcharts.src.js"></script>
-<script>
-  Highcharts.chart('container', {
-      chart: {
-          type: 'line'
-      },
-      title: {
-          text: 'Historic World Population by Region'
-      },
-      xAxis: {
-          categories: ['Africa', 'America', 'Asia', 'Europe', 'Oceania']
-      },
-      series: [{
-          name: 'Year 1800',
-          data: [107, 31, 635, 203, 2]
-      }, {
-          name: 'Year 1900',
-          data: [133, 156, 947, 408, 6]
-      }, {
-          name: 'Year 2012',
-          data: [1052, 954, 4250, 740, 38]
-      }]
-  });
-</script>
-<div id="container1" style="width:50%; float:right; height:300px;margin-top:50px;"></div>
-<script src="https://code.highcharts.com/highcharts.src.js"></script>
-<script>
-  Highcharts.chart('container1', {
-      chart: {
-          type: 'spline'
-      },
-      title: {
-          text: 'Historic World Population by Region'
-      },
-      xAxis: {
-          categories: ['Africa', 'America', 'Asia', 'Europe', 'Oceania']
-      },
-      series: [{
-          name: 'Year 1800',
-          data: [107, 31, 635, 203, 2]
-      }, {
-          name: 'Year 1900',
-          data: [133, 156, 947, 408, 6]
-      }, {
-          name: 'Year 2012',
-          data: [1052, 954, 4250, 740, 38]
-      }]
-  });
-</script>
-<div id="container2" style="width:50%; float:left; height:300px; margin-top:50px;"></div>
-<script src="https://code.highcharts.com/highcharts.src.js"></script>
-<script>
-  Highcharts.chart('container2', {
-      chart: {
-          type: 'line'
-      },
-      title: {
-          text: 'Historic World Population by Region'
-      },
-      xAxis: {
-          categories: ['Africa', 'America', 'Asia', 'Europe', 'Oceania']
-      },
-      series: [{
-          name: 'Year 1800',
-          data: [107, 31, 635, 203, 2]
-      }, {
-          name: 'Year 1900',
-          data: [133, 156, 947, 408, 6]
-      }, {
-          name: 'Year 2012',
-          data: [1052, 954, 4250, 740, 38]
-      }]
-  });
-</script>
-<div id="container3" style="width:50%; float:right; height:300px;margin-top:50px;margin-bottom: 50px;"></div>
-<script src="https://code.highcharts.com/highcharts.src.js"></script>
-<script>
-  Highcharts.chart('container3', {
-      chart: {
-          type: 'spline'
-      },
-      title: {
-          text: 'Historic World Population by Region'
-      },
-      xAxis: {
-          categories: ['Africa', 'America', 'Asia', 'Europe', 'Oceania']
-      },
-      series: [{
-          name: 'Year 1800',
-          data: [107, 31, 635, 203, 2]
-      }, {
-          name: 'Year 1900',
-          data: [133, 156, 947, 408, 6]
-      }, {
-          name: 'Year 2012',
-          data: [1052, 954, 4250, 740, 38]
-      }]
-  });
-</script>
+<div class ="row">
+<div class="column">
+<div class = "card" >
+<div id="container" style="width:100%; float:left; height:300px; margin-top:50px;"></div>
+
+</div>
+</div>
+
+</div>
+</div>
+
+
+
+        
+
 
 
 <script src="jquery-2.2.4.min.js"></script>
