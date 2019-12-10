@@ -1,0 +1,284 @@
+var states = [
+    {
+         State:"ANDAMAN AND NICOBAR ISLANDS",
+         District: ["NICOBARS", "NORTH AND MIDDLE ANDAMAN", "SOUTH ANDAMANS"]
+     },
+     {
+         State:"ANDHRA PRADESH",
+         District: ["ANANTAPUR", "CHITTOOR", "EAST GODAVARI", "GUNTUR", "KADAPA", "KRISHNA", "KURNOOL", "PRAKASAM", "SPSR NELLORE", "SRIKAKULAM",
+      "VISAKHAPATANAM", "VIZIANAGARAM", "WEST GODAVARI"]
+     },
+     {
+      State:"ARUNACHAL PRADESH",
+      District: ["ANJAW", "CHANGLANG", "DIBANG VALLEY", "EAST KAMENG",
+       "EAST SIANG", "KURUNG KUMEY", "LOHIT", "LONGDING", "LOWER DIBANG VALLEY", "LOWER SUBANSIRI", "NAMSAI", "PAPUM PARE", "TAWANG", 
+     "TIRAP", "UPPER SIANG", "UPPER SUBANSIRI", "WEST KAMENG", "WEST SIANG"]
+      },
+      {
+     State:"ASSAM",
+     District: ["BAKSA", "BARPETA", "BONGAIGAON", "CACHAR",
+  "CHIRANG", "DARRANG", "DHEMAJI", "DHUBRI", "DIBRUGARH", "DIMA HASAO", "GOALPARA", "GOLAGHAT", "HAILAKANDI", "JORHAT", "KAMRUP",
+   "KAMRUP METRO", "KARBI ANGLONG", "KARIMGANJ", "KOKRAJHAR", "LAKHIMPUR", "MARIGAON", "NAGAON", "NALBARI", "SIVASAGAR", "SONITPUR", 
+ "TINSUKIA", "UDALGURI"]
+     },
+     {
+     State:"BIHAR",
+     District:["ARARIA", "ARWAL", "AURANGABAD", "BANKA", "BEGUSARAI", "BHAGALPUR", "BHOJPUR", "BUXAR", "DARBHANGA", 
+ "GAYA", "GOPALGANJ", "JAMUI", "JEHANABAD", "KAIMUR (BHABUA)", "KATIHAR", "KHAGARIA", "KISHANGANJ", "LAKHISARAI", "MADHEPURA", "MADHUBANI",
+  "MUNGER", "MUZAFFARPUR", "NALANDA", "NAWADA", "PASHCHIM CHAMPARAN", "PATNA", "PURBI CHAMPARAN", "PURNIA", "ROHTAS", "SAHARSA", "SAMASTIPUR",
+ "SARAN", "SHEIKHPURA", "SHEOHAR", "SITAMARHI", "SIWAN", "SUPAUL", "VAISHALI"]
+     },
+     {
+     State:"CHANDIGARH",
+     District:["CHANDIGARH"]
+     },
+     {
+     State:"CHHATTISGARH",
+     District:["BALOD", "BALODA BAZAR", "BALRAMPUR", "BASTAR", "BEMETARA", "BIJAPUR", "BILASPUR", "DANTEWADA", "DHAMTARI", 
+ "DURG", "GARIYABAND", "JANJGIR-CHAMPA", "JASHPUR", "KABIRDHAM", "KANKER", "KONDAGAON", "KORBA", "KOREA", "MAHASAMUND", "MUNGELI", 
+ "NARAYANPUR", "RAIGARH", "RAIPUR", "RAJNANDGAON", "SUKMA", "SURAJPUR", "SURGUJA"]
+     },
+     {
+     State:"DADRA AND NAGAR HAVELI",
+     District:["DADRA AND NAGAR HAVELI"]
+     },
+     {
+     State:"GOA",
+     District:["NORTH GOA", "SOUTH GOA"]
+     },
+     {
+     State:"GUJARAT",
+     District:["AHMADABAD", "AMRELI", "ANAND", "BANAS KANTHA", "BHARUCH", "BHAVNAGAR", "DANG", "DOHAD", "GANDHINAGAR", "JAMNAGAR",
+  "JUNAGADH", "KACHCHH", "KHEDA", "MAHESANA", "NARMADA", "NAVSARI", "PANCH MAHALS", "PATAN", "PORBANDAR", "RAJKOT", "SABAR KANTHA",
+   "SURAT", "SURENDRANAGAR", "TAPI", "VADODARA", "VALSAD"]
+     },
+     {
+     State:"HARYANA",
+     District:["AMBALA", "BHIWANI", "FARIDABAD", "FATEHABAD", "GURGAON", 
+   "HISAR", "JHAJJAR", "JIND", "KAITHAL", "KARNAL", "KURUKSHETRA", "MAHENDRAGARH", "MEWAT", "PALWAL", "PANCHKULA", "PANIPAT", "REWARI",
+    "ROHTAK", "SIRSA", "SONIPAT", "YAMUNANAGAR"]
+     },
+     {
+     State:"HIMACHAL PRADESH",
+     District:["BILASPUR", "CHAMBA", "HAMIRPUR", "KANGRA", "KINNAUR", "KULLU",
+     "LAHUL AND SPITI", "MANDI", "SHIMLA", "SIRMAUR", "SOLAN", "UNA"]
+    },
+    {
+     State: "JAMMU AND KASHMIR ",
+     District:["ANANTNAG", "BADGAM", "BANDIPORA",
+      "BARAMULLA", "DODA", "GANDERBAL", "JAMMU", "KARGIL", "KATHUA", "KISHTWAR", "KULGAM", "KUPWARA", "LEH LADAKH", "POONCH", "PULWAMA",
+       "RAJAURI", "RAMBAN", "REASI", "SAMBA", "SHOPIAN", "SRINAGAR", "UDHAMPUR"]
+     },
+     {
+     State:"JHARKHAND",
+     District:["BOKARO", "CHATRA", "DEOGHAR", "DHANBAD", 
+       "DUMKA", "EAST SINGHBUM", "GARHWA", "GIRIDIH", "GODDA", "GUMLA", "HAZARIBAGH", "JAMTARA", "KHUNTI", "KODERMA", "LATEHAR", "LOHARDAGA",
+        "PAKUR", "PALAMU", "RAMGARH", "RANCHI", "SAHEBGANJ", "SARAIKELA KHARSAWAN", "SIMDEGA", "WEST SINGHBHUM"]
+     },
+     {
+     State:"KARNATAKA",
+     District:["BAGALKOT", "BANGALORE RURAL", "BELGAUM", "BELLARY", "BENGALURU URBAN", "BIDAR", "BIJAPUR", "CHAMARAJANAGAR",
+          "CHIKBALLAPUR", "CHIKMAGALUR", "CHITRADURGA", "DAKSHIN KANNAD", "DAVANGERE", "DHARWAD", "GADAG", "GULBARGA", "HASSAN", "HAVERI",
+           "KODAGU", "KOLAR", "KOPPAL", "MANDYA", "MYSORE", "RAICHUR", "RAMANAGARA", "SHIMOGA", "TUMKUR", "UDUPI", "UTTAR KANNAD", "YADGIR"]
+     },
+ 
+     {
+     State:"KERALA",
+     District:["ALAPPUZHA", "ERNAKULAM", "IDUKKI", "KANNUR", "KASARAGOD", "KOLLAM", "KOTTAYAM", "KOZHIKODE", "MALAPPURAM", "PALAKKAD", 
+     "PATHANAMTHITTA", "THIRUVANANTHAPURAM", "THRISSUR", "WAYANAD"]
+     },
+     {
+     State:"MADHYA PRADESH",
+     District:["AGAR MALWA", "ALIRAJPUR", "ANUPPUR", "ASHOKNAGAR", 
+     "BALAGHAT", "BARWANI", "BETUL", "BHIND", "BHOPAL", "BURHANPUR", "CHHATARPUR", "CHHINDWARA", "DAMOH", "DATIA", "DEWAS", "DHAR", "DINDORI", 
+ "GUNA", "GWALIOR", "HARDA", "HOSHANGABAD", "INDORE", "JABALPUR", "JHABUA", "KATNI", "KHANDWA", "KHARGONE", "MANDLA", "MANDSAUR", "MORENA",
+  "NARSINGHPUR", "NEEMUCH", "PANNA", "RAISEN", "RAJGARH", "RATLAM", "REWA", "SAGAR", "SATNA", "SEHORE", "SEONI", "SHAHDOL", "SHAJAPUR",
+   "SHEOPUR", "SHIVPURI", "SIDHI", "SINGRAULI", "TIKAMGARH", "UJJAIN", "UMARIA", "VIDISHA"]
+     },
+     {
+     State:"MAHARASHTRA",
+     District:["AHMEDNAGAR", "AKOLA",
+    "AMRAVATI", "AURANGABAD", "BEED", "BHANDARA", "BULDHANA", "CHANDRAPUR", "DHULE", "GADCHIROLI", "GONDIA", "HINGOLI", "JALGAON", "JALNA",
+     "KOLHAPUR", "LATUR", "MUMBAI", "NAGPUR", "NANDED", "NANDURBAR", "NASHIK", "OSMANABAD", "PALGHAR", "PARBHANI", "PUNE", "RAIGAD",
+      "RATNAGIRI", "SANGLI", "SATARA", "SINDHUDURG", "SOLAPUR", "THANE", "WARDHA", "WASHIM", "YAVATMAL"]
+     },
+     {
+     State:"MANIPUR",
+     District:["BISHNUPUR", "CHANDEL", "CHURACHANDPUR", "IMPHAL EAST", "IMPHAL WEST", "SENAPATI", "TAMENGLONG", "THOUBAL", "UKHRUL"]
+     },
+     {
+     State:"MEGHALAYA",
+     District:["EAST GARO HILLS", "EAST JAINTIA HILLS", "EAST KHASI HILLS", "NORTH GARO HILLS", "RI BHOI", "SOUTH GARO HILLS",
+  "SOUTH WEST GARO HILLS", "SOUTH WEST KHASI HILLS", "WEST GARO HILLS", "WEST JAINTIA HILLS", "WEST KHASI HILLS"]
+     },
+     {
+     State:"MIZORAM",
+     District:["AIZAWL", "CHAMPHAI", "KOLASIB", "LAWNGTLAI", "LUNGLEI", "MAMIT", "SAIHA", "SERCHHIP"]
+     },
+     {
+     State:"NAGALAND",
+     District:["DIMAPUR", "KIPHIRE", "KOHIMA", "LONGLENG", "MOKOKCHUNG", "MON", "PEREN", "PHEK", "TUENSANG", "WOKHA", "ZUNHEBOTO"]
+     },
+     {
+     State:"ODISHA",
+     District:["ANUGUL", "BALANGIR", "BALESHWAR", "BARGARH", "BHADRAK", "BOUDH", "CUTTACK", "DEOGARH", "DHENKANAL", "GAJAPATI", "GANJAM", 
+ "JAGATSINGHAPUR", "JAJAPUR", "JHARSUGUDA", "KALAHANDI", "KANDHAMAL", "KENDRAPARA", "KENDUJHAR", "KHORDHA", "KORAPUT", "MALKANGIRI", 
+ "MAYURBHANJ", "NABARANGPUR", "NAYAGARH", "NUAPADA", "PURI", "RAYAGADA", "SAMBALPUR", "SONEPUR", "SUNDARGARH"]
+      },
+      {
+     State:"PUDUCHERRY",
+     District:["KARAIKAL", "MAHE", "PONDICHERRY", "YANAM"]
+      },
+      {
+     State:"PUNJAB",
+     District:["AMRITSAR", "BARNALA", "BATHINDA", "FARIDKOT", "FATEHGARH SAHIB",
+  "FAZILKA", "FIROZEPUR", "GURDASPUR", "HOSHIARPUR", "JALANDHAR", "KAPURTHALA", "LUDHIANA", "MANSA", "MOGA", "MUKTSAR", "NAWANSHAHR",
+   "PATHANKOT", "PATIALA", "RUPNAGAR", "S.A.S NAGAR", "SANGRUR", "TARN TARAN"]
+       },
+       {
+     State:"RAJASTHAN",
+     District:["AJMER", "ALWAR", "BANSWARA", "BARAN", 
+   "BARMER", "BHARATPUR", "BHILWARA", "BIKANER", "BUNDI", "CHITTORGARH", "CHURU", "DAUSA", "DHOLPUR", "DUNGARPUR", "GANGANAGAR",
+    "HANUMANGARH", "JAIPUR", "JAISALMER", "JALORE", "JHALAWAR", "JHUNJHUNU", "JODHPUR", "KARAULI", "KOTA", "NAGAUR", "PALI", "PRATAPGARH", 
+ "RAJSAMAND", "SAWAI MADHOPUR", "SIKAR", "SIROHI", "TONK", "UDAIPUR"]
+    },
+    {
+     State:"SIKKIM",
+     District:["EAST DISTRICT", "NORTH DISTRICT", "SOUTH DISTRICT","WEST DISTRICT"]
+     },
+     {
+     State:"TAMIL NADU",
+     District:["ARIYALUR", "COIMBATORE", "CUDDALORE", "DHARMAPURI", "DINDIGUL", "ERODE", "KANCHIPURAM", "KANNIYAKUMARI",
+  "KARUR", "KRISHNAGIRI", "MADURAI", "NAGAPATTINAM", "NAMAKKAL", "PERAMBALUR", "PUDUKKOTTAI", "RAMANATHAPURAM", "SALEM", "SIVAGANGA", 
+ "THANJAVUR", "THE NILGIRIS", "THENI", "THIRUVALLUR", "THIRUVARUR", "TIRUCHIRAPPALLI", "TIRUNELVELI", "TIRUPPUR", "TIRUVANNAMALAI",
+  "TUTICORIN", "VELLORE", "VILLUPURAM", "VIRUDHUNAGAR"]
+     },
+     {
+     State:"TELANGANA",
+     District:["ADILABAD", "HYDERABAD", "KARIMNAGAR", "KHAMMAM", "MAHBUBNAGAR", "MEDAK", "NALGONDA", "NIZAMABAD", "RANGAREDDI", "WARANGAL"]
+     },
+     {
+     State:"TRIPURA",
+     District:["DHALAI", "GOMATI", "KHOWAI", "NORTH TRIPURA", "SEPAHIJALA","SOUTH TRIPURA", "UNAKOTI", "WEST TRIPURA"]
+     },
+     {
+     State:"UTTAR PRADESH",
+     District:["AGRA", "ALIGARH", "ALLAHABAD", "AMBEDKAR NAGAR", "AMETHI", "AMROHA", 
+   "AURAIYA", "AZAMGARH", "BAGHPAT", "BAHRAICH", "BALLIA", "BALRAMPUR", "BANDA", "BARABANKI", "BAREILLY", "BASTI", "BIJNOR", "BUDAUN", 
+ "BULANDSHAHR", "CHANDAULI", "CHITRAKOOT", "DEORIA", "ETAH", "ETAWAH", "FAIZABAD", "FARRUKHABAD", "FATEHPUR", "FIROZABAD", 
+ "GAUTAM BUDDHA NAGAR", "GHAZIABAD", "GHAZIPUR", "GONDA", "GORAKHPUR", "HAMIRPUR", "HAPUR", "HARDOI", "HATHRAS", "JALAUN",
+  "JAUNPUR", "JHANSI", "KANNAUJ", "KANPUR DEHAT", "KANPUR NAGAR", "KASGANJ", "KAUSHAMBI", "KHERI", "KUSHI NAGAR", "LALITPUR", 
+ "LUCKNOW", "MAHARAJGANJ", "MAHOBA", "MAINPURI", "MATHURA", "MAU", "MEERUT", "MIRZAPUR", "MORADABAD", "MUZAFFARNAGAR", "PILIBHIT",
+  "PRATAPGARH", "RAE BARELI", "RAMPUR", "SAHARANPUR", "SAMBHAL", "SANT KABEER NAGAR", "SANT RAVIDAS NAGAR", "SHAHJAHANPUR", "SHAMLI",
+   "SHRAVASTI", "SIDDHARTH NAGAR", "SITAPUR", "SONBHADRA", "SULTANPUR", "UNNAO", "VARANASI"]
+ },
+ {
+     State:"UTTARAKHAND",
+     District:["ALMORA", "BAGESHWAR", "CHAMOLI", "CHAMPAWAT", "DEHRADUN", "HARIDWAR", "NAINITAL", "PAURI GARHWAL", "PITHORAGARH", "RUDRA PRAYAG",
+     "TEHRI GARHWAL", "UDAM SINGH NAGAR", "UTTAR KASHI"]
+    },
+    {
+     State:"WEST BENGAL",
+     District:["24 PARAGANAS NORTH", "24 PARAGANAS SOUTH", "BANKURA", "BARDHAMAN", 
+     "BIRBHUM", "COOCHBEHAR", "DARJEELING", "DINAJPUR DAKSHIN", "DINAJPUR UTTAR", "HOOGHLY", "HOWRAH", "JALPAIGURI", "MALDAH", 
+ "MEDINIPUR EAST", "MEDINIPUR WEST", "MURSHIDABAD", "NADIA", "PURULIA"]
+     }
+ 
+ ];
+
+ var crops = 
+['Arecanut', 'Other Kharif pulses', 'Rice', 'Banana', 'Cashewnut',
+'Coconut ', 'Dry ginger', 'Sugarcane', 'Sweet potato', 'Tapioca',
+'Black pepper', 'Dry chillies', 'other oilseeds', 'Turmeric',
+'Maize', 'Moong(Green Gram)', 'Urad', 'Arhar/Tur', 'Groundnut',
+'Sunflower', 'Bajra', 'Castor seed', 'Cotton(lint)', 'Horse-gram',
+'Jowar', 'Korra', 'Ragi', 'Tobacco', 'Gram', 'Wheat', 'Masoor',
+'Sesamum', 'Linseed', 'Safflower', 'Onion', 'other misc. pulses',
+'Samai', 'Small millets', 'Coriander', 'Potato',
+'Other  Rabi pulses', 'Soyabean', 'Beans & Mutter(Vegetable)',
+'Bhindi', 'Brinjal', 'Citrus Fruit', 'Cucumber', 'Grapes', 'Mango',
+'Orange', 'other fibres', 'Other Fresh Fruits', 'Other Vegetables',
+'Papaya', 'Pome Fruit', 'Tomato', 'Rapeseed &Mustard', 'Mesta',
+'Cowpea(Lobia)', 'Lemon', 'Pome Granet', 'Sapota', 'Cabbage',
+'Peas  (vegetable)', 'Niger seed', 'Bottle Gourd', 'Sannhamp',
+'Varagu', 'Garlic', 'Ginger', 'Oilseeds total', 'Pulses total',
+'Jute', 'Peas & beans (Pulses)', 'Blackgram', 'Paddy', 'Pineapple',
+'Barley', 'Khesari', 'Guar seed', 'Moth',
+'Other Cereals & Millets', 'Cond-spcs other', 'Turnip', 'Carrot',
+'Redish', 'Arcanut (Processed)', 'Atcanut (Raw)',
+'Cashewnut Processed', 'Cashewnut Raw', 'Cardamom', 'Rubber',
+'Bitter Gourd', 'Drum Stick', 'Jack Fruit', 'Snak Guard',
+'Pump Kin', 'Tea', 'Coffee', 'Cauliflower', 'Other Citrus Fruit',
+'Water Melon', 'Total foodgrain', 'Kapas', 'Colocosia', 'Lentil',
+'Bean', 'Jobster', 'Perilla', 'Rajmash Kholar',
+'Ricebean (nagadal)', 'Ash Gourd', 'Beet Root', 'Lab-Lab',
+'Ribed Guard', 'Yam', 'Apple', 'Peach', 'Pear', 'Plums', 'Litchi',
+'Ber', 'Other Dry Fruit', 'Jute & mesta'];
+ 
+ var ele = document.getElementById("state");
+ for (var i=0;i<states.length;i++){
+     ele.innerHTML=ele.innerHTML + '<option value = "'+states[i]['State']+'">'+states[i]['State']+'</option>';
+ }
+
+ function singleSelectChangeValue() {
+     //Getting Value
+     //var selValue = document.getElementById("singleSelectDD").value;
+     var selObj = document.getElementById("state");
+     var selValue = selObj.options[selObj.selectedIndex].value;
+
+     //Setting Value
+
+     var dist= document.getElementById("district");
+     dist.innerHTML='<option value="">District</option>';
+     for(var i=0;i<states.length;i++){
+         
+         if(selValue==states[i]['State']){
+         for(var j=0;j<states[i]['District'].length;j++){
+
+             dist.innerHTML=dist.innerHTML+ '<option value="'+states[i]['District'][j]+'">'+ states[i]['District'][j]+'</option>';
+             
+         
+             }
+
+            
+             
+         }
+         
+     }
+ }
+
+  function nextSelectChangeValue() {
+ //Getting Value
+ 
+ var dist = document.getElementById("district");
+     var distValue = dist.options[dist.selectedIndex].value;
+     //Setting Value
+     
+}
+
+
+function plot() {
+
+ var dist = document.getElementById("district");
+ var state = document.getElementById("state");
+ var crop = document.getElementById("crop");
+
+ var distValue = dist.options[dist.selectedIndex].value;
+ var stateValue = state.options[state.selectedIndex].value;
+ var cropValue = crop.options[crop.selectedIndex].value;
+
+ 
+ console.log(stateValue);
+ console.log(distValue);
+ console.log(cropValue);
+
+
+}
+ 
+
+
+
+ var c = document.getElementById("crop");
+for (var i=0;i<crops.length;i++){
+c.innerHTML=c.innerHTML + '<option value = "'+crops[i]+'">'+crops[i]+'</option>';
+}
